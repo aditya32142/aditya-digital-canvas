@@ -1,18 +1,64 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Download, Linkedin, Github, Code2, Trophy, ArrowUpRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Download,
+  Linkedin,
+  Github,
+  Code2,
+  Trophy,
+  ArrowUpRight,
+} from "lucide-react";
 
 const cards = [
-  { icon: MapPin, label: "Address", value: "Pune, India", href: "#" },
-  { icon: Phone, label: "Phone", value: "+91 7869115922", href: "tel:+917869115922" },
-  { icon: Mail, label: "Email", value: "5464217aditya@gmail.com", href: "mailto:5464217aditya@gmail.com" },
-  { icon: Download, label: "Resume", value: "Download PDF", href: "#" },
+  {
+    icon: MapPin,
+    label: "Address",
+    value: "Pune, India",
+    href: "#",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 7869115922",
+    href: "tel:+917869115922",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "5464217aditya@gmail.com",
+    href: "mailto:5464217aditya@gmail.com",
+  },
+  {
+    icon: Download,
+    label: "Resume",
+    value: "Download PDF",
+    href: "/Aditya_Wattamwar_Resume.pdf",
+  },
 ];
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Code2, label: "LeetCode", href: "https://leetcode.com" },
-  { icon: Trophy, label: "HackerRank", href: "https://hackerrank.com" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/adityawattamwar",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    href: "https://github.com/aditya32142",
+  },
+  {
+    icon: Code2,
+    label: "LeetCode",
+    href: "https://leetcode.com/u/Aditya234556/",
+  },
+  {
+    icon: Trophy,
+    label: "HackerRank",
+    href: "https://www.hackerrank.com/profile/5464217aditya",
+  },
 ];
 
 export function Contact() {
@@ -23,9 +69,15 @@ export function Contact() {
           <h2 className="text-outline absolute -top-8 left-0 select-none font-display text-7xl md:text-9xl font-bold opacity-60">
             Contact
           </h2>
+
           <div className="relative pt-8">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold">// say hello</span>
-            <h3 className="mt-2 font-display text-4xl md:text-5xl font-bold">Let's build together.</h3>
+            <span className="text-xs uppercase tracking-[0.3em] text-gold">
+              // say hello
+            </span>
+
+            <h3 className="mt-2 font-display text-4xl md:text-5xl font-bold">
+              Let's build together.
+            </h3>
           </div>
         </div>
 
@@ -34,6 +86,8 @@ export function Contact() {
             <motion.a
               key={label}
               href={href}
+              target={label === "Resume" ? "_blank" : "_self"}
+              rel="noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -43,8 +97,15 @@ export function Contact() {
               <span className="mb-5 grid h-16 w-16 place-items-center rounded-full bg-gold/10 text-gold transition-all group-hover:bg-gold group-hover:text-primary-foreground gold-glow">
                 <Icon size={24} />
               </span>
-              <div className="text-xs uppercase tracking-[0.2em] text-foreground/50">{label}</div>
-              <div className="mt-2 break-all text-sm font-medium">{value}</div>
+
+              <div className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                {label}
+              </div>
+
+              <div className="mt-2 break-all text-sm font-medium">
+                {value}
+              </div>
+
               <ArrowUpRight
                 size={14}
                 className="absolute right-4 top-4 text-foreground/30 transition-all group-hover:text-gold group-hover:rotate-45"
@@ -59,10 +120,13 @@ export function Contact() {
               <h4 className="font-display text-2xl md:text-3xl font-bold">
                 Have a project or role in mind?
               </h4>
+
               <p className="mt-2 text-foreground/60">
-                Open to internships, product associate roles, and SaaS opportunities.
+                Open to internships, product associate roles, and SaaS
+                opportunities.
               </p>
             </div>
+
             <div className="flex flex-wrap gap-3">
               {socials.map(({ icon: Icon, label, href }) => (
                 <a
@@ -73,7 +137,8 @@ export function Contact() {
                   aria-label={label}
                   className="group inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-medium hover:border-gold hover:text-gold hover:-translate-y-0.5 transition-all"
                 >
-                  <Icon size={16} /> {label}
+                  <Icon size={16} />
+                  {label}
                 </a>
               ))}
             </div>
@@ -81,7 +146,10 @@ export function Contact() {
         </div>
 
         <footer className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 text-sm text-foreground/50 sm:flex-row">
-          <div>© {new Date().getFullYear()} Aditya Wattamwar. Crafted with care.</div>
+          <div>
+            © {new Date().getFullYear()} Aditya Wattamwar. Crafted with care.
+          </div>
+
           <div>Pune, India — Available worldwide</div>
         </footer>
       </div>
