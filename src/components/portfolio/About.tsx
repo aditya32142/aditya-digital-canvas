@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, Briefcase, Languages } from "lucide-react";
-import portrait from "@/assets/aditya-portrait.jpg";
+import { GraduationCap, MapPin, Briefcase, Languages, ImageIcon } from "lucide-react";
 
 const skills = [
   { name: "C++", value: 88 },
@@ -52,14 +51,14 @@ export function About() {
             className="lg:col-span-5 space-y-6"
           >
             <div className="overflow-hidden rounded-3xl glass">
-              <img
-                src={portrait}
-                alt="Aditya Wattamwar"
-                loading="lazy"
-                width={896}
-                height={1152}
-                className="h-72 w-full object-cover object-top"
-              />
+              <div className="flex h-72 w-full items-center justify-center bg-gradient-to-br from-muted/40 via-background to-muted/20">
+                <div className="flex flex-col items-center gap-2 text-center">
+                  <div className="grid h-14 w-14 place-items-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+                    <ImageIcon size={22} />
+                  </div>
+                  <span className="text-xs text-foreground/60">Add your photo in src/assets/</span>
+                </div>
+              </div>
               <div className="space-y-2 p-6">
                 {info.map(([k, v]) => (
                   <div key={k} className="flex justify-between border-b border-border/50 py-2 text-sm">
