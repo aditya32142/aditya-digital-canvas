@@ -1,39 +1,33 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, FolderGit2, Download, ArrowDown, Sparkles } from "lucide-react";
-import portrait from "@/assets/aditya-portrait.jpg";
+import { Linkedin, FolderGit2, Download, ArrowDown, Sparkles, ImageIcon } from "lucide-react";
 
-const roles = [
-  "Aspiring Software Developer",
-  "Product Enthusiast",
-  "UI/UX Learner",
-  "Problem Solver",
-];
+// 👇 To use your own photo: drop the file in `src/assets/` (e.g. `aditya-portrait.jpg`),
+// then uncomment the import below and set `profileImage` to it.
+// import myPortrait from "@/assets/aditya-portrait.jpg";
+const profileImage: string | null = null;
+
+const TYPED_TEXT = "Aspiring Software Developer";
 
 function Typer() {
-  const [i, setI] = useState(0);
   const [text, setText] = useState("");
   const [del, setDel] = useState(false);
 
   useEffect(() => {
-    const word = roles[i];
-    const speed = del ? 40 : 80;
+    const speed = del ? 40 : 90;
     const t = setTimeout(() => {
       if (!del) {
-        const next = word.slice(0, text.length + 1);
+        const next = TYPED_TEXT.slice(0, text.length + 1);
         setText(next);
-        if (next === word) setTimeout(() => setDel(true), 1400);
+        if (next === TYPED_TEXT) setTimeout(() => setDel(true), 1600);
       } else {
-        const next = word.slice(0, text.length - 1);
+        const next = TYPED_TEXT.slice(0, text.length - 1);
         setText(next);
-        if (next === "") {
-          setDel(false);
-          setI((p) => (p + 1) % roles.length);
-        }
+        if (next === "") setTimeout(() => setDel(false), 400);
       }
     }, speed);
     return () => clearTimeout(t);
-  }, [text, del, i]);
+  }, [text, del]);
 
   return (
     <span className="text-gold">
@@ -58,9 +52,7 @@ export function Hero() {
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-            I'm <span className="text-gold">Aditya</span>
-            <br />
-            Wattamwar.
+            I'm <span className="text-gold">Aditya Wattamwar</span>.
           </h1>
 
           <div className="mt-5 text-2xl md:text-3xl font-display font-medium min-h-[2.5rem]">
@@ -126,14 +118,35 @@ export function Hero() {
             className="relative mx-auto max-w-md"
           >
             <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold/30 via-transparent to-gold/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-border glass group">
-              <img
-                src={portrait}
-                alt="Aditya Wattamwar portrait"
-                width={896}
-                height={1152}
-                className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
-              />
+            <div className="relative overflow-hidden rounded-[2rem] border border-border glass group aspect-[4/5]">
+              {profileImage ? (
+                <img
+                  src={profileImage}
+                  alt="Aditya Wattamwar portrait"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : (
+                <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-muted/40 via-background to-muted/20 p-8 text-center">
+                  <div className="grid h-20 w-20 place-items-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+                    <ImageIcon size={32} />
+                  </div>
+                  <div>
+                    <div className="font-display text-lg font-semibold text-foreground">
+                      Your Photo Here
+                    </div>
+                    <div className="mt-2 max-w-xs text-xs text-foreground/60 leading-relaxed">
+                      Add your image to{" "}
+                      <code className="rounded bg-muted/60 px-1.5 py-0.5 text-gold">
+                        src/assets/
+                      </code>{" "}
+                      and import it in{" "}
+                      <code className="rounded bg-muted/60 px-1.5 py-0.5 text-gold">
+                        Hero.tsx
+                      </code>
+                    </div>
+                  </div>
+                </div>
+              )}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -159,7 +172,10 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <a href="#about" className="mx-auto mt-10 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50 hover:text-gold transition-colors">
+      <a
+        href="#about"
+        className="mx-auto mt-10 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50 hover:text-gold transition-colors"
+      >
         Scroll <ArrowDown size={14} className="animate-bounce" />
       </a>
     </section>
