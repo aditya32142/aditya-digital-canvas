@@ -15,7 +15,7 @@ const cards = [
   {
     icon: MapPin,
     label: "Address",
-    value: "Bangalore, India",
+    value: "India",
     href: "#",
   },
   {
@@ -150,7 +150,7 @@ export function Contact() {
             © {new Date().getFullYear()} Aditya Wattamwar. Crafted with care.
           </div>
 
-          <div>Bangalore, India — Available worldwide</div>
+          <div>India — Available worldwide</div>
         </footer>
       </div>
     </section>

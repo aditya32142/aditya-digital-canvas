@@ -214,7 +214,7 @@ export function Hero() {
             {/* FLOATING TAGS */}
             <div className="absolute -left-6 top-10 hidden md:block rounded-2xl glass px-4 py-3 text-xs">
               <div className="text-gold font-semibold">
-                Bangalore, India
+                India
               </div>
 
               <div className="text-foreground/60">

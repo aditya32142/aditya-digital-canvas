@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   GraduationCap,
-  MapPin,
   Briefcase,
   Languages,
 } from "lucide-react";
@@ -33,7 +32,7 @@ const info = [
   ["University", "Savitribai Phule Pune University (SPPU)"],
   ["Degree", "B.E. in Information Technology (2027)"],
   ["CGPA", "8.4 / 10"],
-  ["Location", "Bangalore, India"],
+  ["Location", "India"],
 ];
 
 const grid = [
@@ -46,11 +45,6 @@ const grid = [
     icon: GraduationCap,
     label: "Education",
     value: "B.E. in Information Technology - 2027",
-  },
-  {
-    icon: MapPin,
-    label: "Domain",
-    value: "Backend / APIs / Testing / Automation / CI-CD",
   },
   {
     icon: Languages,
@@ -174,7 +168,7 @@ export function About() {
             </div>
 
             {/* INFO GRID */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 
               {grid.map(({ icon: Icon, label, value }) => (
                 <div
