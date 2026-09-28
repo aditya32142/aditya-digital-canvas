@@ -12,7 +12,7 @@ import myPortrait from "@/assets/aditya-portrait.jpeg";
 
 const profileImage = myPortrait;
 
-const TYPED_TEXT = "Aspiring Software Developer";
+const TYPED_TEXT = "Software Developer";
 
 function Typer() {
   const [text, setText] = useState("");
@@ -80,9 +80,9 @@ export function Hero() {
           </div>
 
           <p className="mt-6 max-w-xl text-base md:text-lg text-foreground/70 leading-relaxed">
-            A BE IT student passionate about building workflow-driven web
-            applications, SaaS-inspired systems, and scalable user-focused
-            digital experiences.
+            Software Developer experienced in Python, software testing, API
+            development, automation, and CI/CD workflows. Passionate about
+            building reliable backend solutions and scalable digital systems.
           </p>
 
           {/* BUTTONS */}
@@ -109,16 +109,15 @@ export function Hero() {
             </a>
 
             {/* RESUME */}
-            {/* RESUME */}
-<a
-  href="/Aditya_Wattamwar_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold hover:border-gold hover:text-gold transition-all"
->
-  <Download size={16} />
-  Resume
-</a>
+            <a
+              href="/Aditya_Wattamwar_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold hover:border-gold hover:text-gold transition-all"
+            >
+              <Download size={16} />
+              Resume
+            </a>
 
           </div>
 
@@ -127,7 +126,7 @@ export function Hero() {
 
             <div>
               <div className="text-2xl font-display font-bold text-foreground">
-                8.31
+                8.4
               </div>
 
               <div className="text-xs uppercase tracking-wider">
@@ -151,11 +150,11 @@ export function Hero() {
 
             <div>
               <div className="text-2xl font-display font-bold text-foreground">
-                1
+                2
               </div>
 
               <div className="text-xs uppercase tracking-wider">
-                Internship
+                Internships
               </div>
             </div>
 
@@ -215,11 +214,11 @@ export function Hero() {
             {/* FLOATING TAGS */}
             <div className="absolute -left-6 top-10 hidden md:block rounded-2xl glass px-4 py-3 text-xs">
               <div className="text-gold font-semibold">
-                Pune, India
+                Bangalore, India
               </div>
 
               <div className="text-foreground/60">
-                BE IT • Sinhgad
+                BE IT • SPPU
               </div>
             </div>
 

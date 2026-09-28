@@ -15,7 +15,7 @@ const cards = [
   {
     icon: MapPin,
     label: "Address",
-    value: "Pune, India",
+    value: "Bangalore, India",
     href: "#",
   },
   {
@@ -122,7 +122,7 @@ export function Contact() {
               </h4>
 
               <p className="mt-2 text-foreground/60">
-                Open to internships, product associate roles, and SaaS
+                Open to software developer roles, internships, and engineering
                 opportunities.
               </p>
             </div>
@@ -150,7 +150,7 @@ export function Contact() {
             © {new Date().getFullYear()} Aditya Wattamwar. Crafted with care.
           </div>
 
-          <div>Pune, India — Available worldwide</div>
+          <div>Bangalore, India — Available worldwide</div>
         </footer>
       </div>
     </section>

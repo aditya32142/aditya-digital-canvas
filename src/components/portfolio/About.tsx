@@ -7,47 +7,55 @@ import {
 } from "lucide-react";
 
 const skills = [
+  "Python",
   "C++",
-  "Core Java",
-  "SQL",
-  "Data Structures",
-  "Git & GitHub",
-  "UI/UX Design",
-  "Wireframing",
-  "Product Thinking",
-  "Problem Solving",
-  "Workflow Systems",
+  "Java",
+  "Node.js",
+  "React",
+  "REST APIs",
+  "PostgreSQL",
+  "MongoDB",
+  "MySQL",
+  "Redis",
+  "Prisma",
+  "Docker",
+  "CI/CD Workflows",
+  "Git & GitLab",
+  "Software Testing (API, UI, Regression)",
+  "Postman",
+  "Data Structures & Algorithms",
+  "Object-Oriented Programming (OOP)",
 ];
 
 const info = [
   ["Name", "Aditya Wattamwar"],
-  ["Role", "BE IT Student"],
-  ["University", "Savitribai Phule Pune University"],
-  ["College", "Sinhgad Institutes"],
-  ["CGPA", "8.314"],
-  ["Location", "Pune, India"],
+  ["Role", "Software Developer"],
+  ["University", "Savitribai Phule Pune University (SPPU)"],
+  ["Degree", "B.E. in Information Technology (2027)"],
+  ["CGPA", "8.4 / 10"],
+  ["Location", "Bangalore, India"],
 ];
 
 const grid = [
   {
     icon: Briefcase,
     label: "Profile",
-    value: "Aspiring Software Developer",
+    value: "Software Developer",
   },
   {
     icon: GraduationCap,
     label: "Education",
-    value: "Bachelor of Engineering (IT)",
+    value: "B.E. in Information Technology - 2027",
   },
   {
     icon: MapPin,
     label: "Domain",
-    value: "SaaS / Product / UI-UX / Software",
+    value: "Backend / APIs / Testing / Automation / CI-CD",
   },
   {
     icon: Languages,
     label: "Languages",
-    value: "English, Marathi, Hindi",
+    value: "English, Hindi, Marathi",
   },
 ];
 
@@ -118,21 +126,22 @@ export function About() {
 
             {/* DESCRIPTION */}
             <p className="text-lg leading-relaxed text-foreground/80">
-              Aditya is an{" "}
+              Aditya is a{" "}
               <span className="text-gold">
-                aspiring software developer
+                Software Developer
               </span>{" "}
-              with strong foundations in C++, Java, SQL, and Data
-              Structures & Algorithms. Passionate about workflow
-              optimization, SaaS-inspired systems, UI/UX experiences,
-              and building scalable digital products.
+              with hands-on experience in Python, software testing, API
+              development, automation, and CI/CD workflows. Grounded with strong
+              fundamentals in Object-Oriented Programming, Data Structures &
+              Algorithms, and reliable software engineering practices.
             </p>
 
             <p className="text-foreground/60 leading-relaxed">
-              Deeply interested in CRM systems, enterprise workflows,
-              and product-driven software development. Focused on
-              creating user-centered experiences while continuously
-              improving technical and design thinking skills.
+              Experienced across backend development, public REST APIs, Prisma,
+              PostgreSQL, Redis, AI/RAG chatbot implementations, and automated
+              workflows. Skilled in functional, API, regression, and UI testing,
+              debugging complex issues, and shipping robust solutions with Git/GitLab
+              and CI/CD pipelines.
             </p>
 
             {/* SKILLS */}
