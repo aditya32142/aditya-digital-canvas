@@ -29,12 +29,12 @@ const cards = [
     label: "Email",
     value: "5464217aditya@gmail.com",
     href: "mailto:5464217aditya@gmail.com",
-  },
-  {
-    icon: Mail,
-    label: "Email (Alt)",
-    value: "adityawattamwar32@gmail.com",
-    href: "mailto:adityawattamwar32@gmail.com",
+    extras: [
+      {
+        value: "adityawattamwar32@gmail.com",
+        href: "mailto:adityawattamwar32@gmail.com",
+      },
+    ],
   },
   {
     icon: Download,
@@ -77,9 +77,7 @@ export function Contact() {
           </h2>
 
           <div className="relative pt-8">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold">
-              // say hello
-            </span>
+            <span className="text-xs uppercase tracking-[0.3em] text-gold">// say hello</span>
 
             <h3 className="mt-2 font-display text-4xl md:text-5xl font-bold">
               Let's build together.
@@ -87,37 +85,51 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, label, value, href }, i) => (
-            <motion.a
-              key={label}
-              href={href}
-              target={label === "Resume" ? "_blank" : "_self"}
-              rel="noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="group relative flex flex-col items-center rounded-3xl glass p-8 text-center transition-all hover:-translate-y-2 hover:border-gold/50"
-            >
-              <span className="mb-5 grid h-16 w-16 place-items-center rounded-full bg-gold/10 text-gold transition-all group-hover:bg-gold group-hover:text-primary-foreground gold-glow">
-                <Icon size={24} />
-              </span>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map(({ icon: Icon, label, value, href, extras }, i) => {
+            const Wrapper = extras ? motion.div : motion.a;
+            const linkProps = extras
+              ? {}
+              : {
+                  href,
+                  target: label === "Resume" ? "_blank" : "_self",
+                  rel: "noreferrer",
+                };
+            return (
+              <Wrapper
+                key={label}
+                {...linkProps}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="group relative flex flex-col items-center rounded-3xl glass p-8 text-center transition-all hover:-translate-y-2 hover:border-gold/50"
+              >
+                <span className="mb-5 grid h-16 w-16 place-items-center rounded-full bg-gold/10 text-gold transition-all group-hover:bg-gold group-hover:text-primary-foreground gold-glow">
+                  <Icon size={24} />
+                </span>
 
-              <div className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-                {label}
-              </div>
+                <div className="text-xs uppercase tracking-[0.2em] text-foreground/50">{label}</div>
 
-              <div className="mt-2 break-all text-sm font-medium">
-                {value}
-              </div>
+                {extras ? (
+                  <div className="mt-2 flex flex-col gap-1 break-all text-sm font-medium">
+                    {[{ value, href }, ...extras].map((e) => (
+                      <a key={e.href} href={e.href} className="hover:text-gold transition-colors">
+                        {e.value}
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-2 break-all text-sm font-medium">{value}</div>
+                )}
 
-              <ArrowUpRight
-                size={14}
-                className="absolute right-4 top-4 text-foreground/30 transition-all group-hover:text-gold group-hover:rotate-45"
-              />
-            </motion.a>
-          ))}
+                <ArrowUpRight
+                  size={14}
+                  className="absolute right-4 top-4 text-foreground/30 transition-all group-hover:text-gold group-hover:rotate-45"
+                />
+              </Wrapper>
+            );
+          })}
         </div>
 
         <div className="mt-12 rounded-3xl glass p-8 md:p-12">
@@ -128,8 +140,7 @@ export function Contact() {
               </h4>
 
               <p className="mt-2 text-foreground/60">
-                Open to software developer roles, internships, and engineering
-                opportunities.
+                Open to software developer roles, internships, and engineering opportunities.
               </p>
             </div>
 
@@ -152,9 +163,7 @@ export function Contact() {
         </div>
 
         <footer className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 text-sm text-foreground/50 sm:flex-row">
-          <div>
-            © {new Date().getFullYear()} Aditya Wattamwar. Crafted with care.
-          </div>
+          <div>© {new Date().getFullYear()} Aditya Wattamwar. Crafted with care.</div>
 
           <div>India — Available worldwide</div>
         </footer>
