@@ -31,6 +31,12 @@ const cards = [
     href: "mailto:5464217aditya@gmail.com",
   },
   {
+    icon: Mail,
+    label: "Email (Alt)",
+    value: "adityawattamwar32@gmail.com",
+    href: "mailto:adityawattamwar32@gmail.com",
+  },
+  {
     icon: Download,
     label: "Resume",
     value: "Download PDF",
@@ -81,7 +87,7 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map(({ icon: Icon, label, value, href }, i) => (
             <motion.a
               key={label}
